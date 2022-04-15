@@ -6,9 +6,9 @@ O jogo consiste em 1 helicópteros e um soldado aliado contra um caminhão e um 
 Aproveite para se divertir!
 
 # Controles
-W- subir
-S- descer
-D- Atirar
+W ou seta pra cima- subir 
+S ou seta para baixo- descer
+D ou espaço- Atirar
 
 ## Sobre o jogo:
 Estilização em CSS;
