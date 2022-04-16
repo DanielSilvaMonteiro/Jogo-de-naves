@@ -1,4 +1,4 @@
-function start() {           //inicio da função start
+﻿function start() {           //inicio da função start
     $("#inicio").hide();    //ocultar (hide) a id inicio, só é possivel devido ao Jquery
 
     $("#fundoGame").append("<div id='jogador' class='anima1'></div>");     //criar novas divs pelo append
