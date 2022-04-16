@@ -28,6 +28,18 @@ var TECLA = {       //inciando valor decimal de cada tecla
 	UP: 38,
 	DOWN: 40
 	}
+var times = 3000; // time in millie seconds
+var i=0;
+images=[];
+images[0] = "url(imgs/heli.jpg)";
+images[1] = "url(imgs/guerra2.jpg)";
+var el;
+
+function alteraImagem(){
+	el = document.getElementById('body');
+	el.style.backgroundImage = images[i];
+		    
+	}
 
 	jogo.pressionou = [];   //tipo array se pressionou ou não
 
@@ -69,6 +81,7 @@ moveamigo();
 colisao();
 placar();
 energia();
+alteraImagem();
 
 } // Fim da função loop()
 //***********************************
@@ -427,7 +440,7 @@ function energia() {
 		
 		//Game Over
 		gameOver();
-		
+				
 	}
 
 } // Fim da função energia()
@@ -438,7 +451,9 @@ function gameOver() {
 	fimdejogo=true;
 	musica.pause(); 
 	somGameover.play();
-	
+	i = 1;
+	//alteraImagem2();
+		
 	window.clearInterval(jogo.timer); //para o game loop do jogo
 	jogo.timer=null;
 	
@@ -447,10 +462,15 @@ function gameOver() {
 	$("#inimigo2").remove();
 	$("#amigo").remove();
 	
+	
+	
 	$("#fundoGame").append("<div id='fim'></div>");
 	
-	$("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
-  } // Fim da função gameOver();
+	$("#fim").html("<h1> Game Over </h1><p>Sua pontuação foi: " + pontos + "</p>" + "<div id='reinicia' onClick=reiniciaJogo()><span>Jogar Novamente</h3></span>");
+
+	alteraImagem();
+		
+	} // Fim da função gameOver();
 
 } //Fim da função start
 
@@ -460,5 +480,8 @@ function reiniciaJogo() {
 	somGameover.pause();
 	$("#fim").remove();
 	start();
-	
+		
 } //Fim da função reiniciaJogo
+
+
+
